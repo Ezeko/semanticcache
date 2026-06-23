@@ -1,6 +1,6 @@
 {
   "name": "local-semantic-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ultra-fast, zero-dependency local semantic cache for LLM/AI prompt responses with built-in TF-IDF vectorizer, vector similarity search, and file persistence.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",

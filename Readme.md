@@ -1,6 +1,6 @@
 # 🧠 local-semantic-cache
 
-[![NPM Version](https://img.shields.io/badge/npm-v1.0.0-blue?style=flat-square)](https://www.npmjs.com/package/local-semantic-cache)
+[![NPM Version](https://img.shields.io/badge/npm-v1.0.1-blue?style=flat-square)](https://www.npmjs.com/package/local-semantic-cache)
 [![Downloads](https://img.shields.io/badge/downloads-420%2Fmonth-brightgreen?style=flat-square)](https://www.npmjs.com/package/local-semantic-cache)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)](https://github.com/Ezeko/local-semantic-cache/actions)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/Ezeko/local-semantic-cache/blob/main/LICENCE)
