@@ -1,16 +1,16 @@
-# 🧠 semanticcache
+# 🧠 local-semantic-cache
 
-[![NPM Version](https://img.shields.io/npm/v/semanticcache.svg?style=flat-square&color=blue)](https://www.npmjs.com/package/semanticcache)
-[![Downloads](https://img.shields.io/npm/dm/semanticcache.svg?style=flat-square)](https://www.npmjs.com/package/semanticcache)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Ezeko/semanticcache/ci.yml?branch=main&style=flat-square)](https://github.com/Ezeko/semanticcache/actions)
-[![License](https://img.shields.io/npm/l/semanticcache.svg?style=flat-square)](https://github.com/Ezeko/semanticcache/blob/main/LICENCE)
-[![GitHub Stars](https://img.shields.io/github/stars/Ezeko/semanticcache.svg?style=flat-square&label=stars&color=yellow)](https://github.com/Ezeko/semanticcache/stargazers)
+[![NPM Version](https://img.shields.io/npm/v/local-semantic-cache.svg?style=flat-square&color=blue)](https://www.npmjs.com/package/local-semantic-cache)
+[![Downloads](https://img.shields.io/npm/dm/local-semantic-cache.svg?style=flat-square)](https://www.npmjs.com/package/local-semantic-cache)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Ezeko/local-semantic-cache/ci.yml?branch=main&style=flat-square)](https://github.com/Ezeko/local-semantic-cache/actions)
+[![License](https://img.shields.io/npm/l/local-semantic-cache.svg?style=flat-square)](https://github.com/Ezeko/local-semantic-cache/blob/main/LICENCE)
+[![GitHub Stars](https://img.shields.io/github/stars/Ezeko/local-semantic-cache.svg?style=flat-square&label=stars&color=yellow)](https://github.com/Ezeko/local-semantic-cache/stargazers)
 
 > **Ultra-fast, zero-dependency local semantic cache for LLM/AI prompt responses with built-in text vectorization, similarity search, and file persistence.**
 
 Traditional caching (like key-value maps or standard Redis caches) requires exact string matches. A query like *"What is the capital of Nigeria?"* won't hit a cache keyed with *"Tell me the capital of Nigeria"*. 
 
-`semanticcache` resolves this by encoding prompt query keys into a **vector space** and using **cosine similarity** to retrieve cached responses for semantically identical queries.
+`local-semantic-cache` resolves this by encoding prompt query keys into a **vector space** and using **cosine similarity** to retrieve cached responses for semantically identical queries.
 
 ```text
 [Incoming Prompt] ──► Tokenize & Embed ──► Vector [0.2, 0.8, ...] 
@@ -37,26 +37,26 @@ Traditional caching (like key-value maps or standard Redis caches) requires exac
 Install via your preferred package manager:
 
 ```bash
-npm install semanticcache
+npm install local-semantic-cache
 # or
-yarn add semanticcache
+yarn add local-semantic-cache
 # or
-pnpm add semanticcache
+pnpm add local-semantic-cache
 # or
-bun add semanticcache
+bun add local-semantic-cache
 ```
 
 ---
 
 ## Quick Start (Zero-Setup Local Mode)
 
-By default, `semanticcache` uses its built-in string vectorizer. No API keys are required:
+By default, `local-semantic-cache` uses its built-in string vectorizer. No API keys are required:
 
 ```typescript
-import { SemanticCache } from 'semanticcache';
+import { SemanticCache } from 'local-semantic-cache';
 
 const cache = new SemanticCache({
-  minSimilarity: 0.85,             // Cosine threshold between 0.0 and 1.0
+  minSimilarity: 0.60,             // Cosine threshold between 0.0 and 1.0 (0.60 is recommended for sparse local vectorizer)
   filePath: './data/cache-db.json' // Path to persist logs on disk
 });
 
@@ -79,7 +79,7 @@ console.log(invalidResponse); // null (Cache Miss)
 ### 1. OpenAI Embeddings Example
 
 ```typescript
-import { SemanticCache } from 'semanticcache';
+import { SemanticCache } from 'local-semantic-cache';
 import OpenAI from 'openai';
 
 const openai = new OpenAI();
@@ -105,7 +105,7 @@ console.log(result); // "William Shakespeare"
 ### 2. Google Gemini Embeddings Example
 
 ```typescript
-import { SemanticCache } from 'semanticcache';
+import { SemanticCache } from 'local-semantic-cache';
 import { GoogleGenAI } from '@google/genai';
 
 const ai = new GoogleGenAI();

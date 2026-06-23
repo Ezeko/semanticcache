@@ -1,6 +1,6 @@
-# Contributing to semanticcache
+# Contributing to local-semantic-cache
 
-First off, thank you for considering contributing to `semanticcache`! 
+First off, thank you for considering contributing to `local-semantic-cache`! 
 
 We welcome contributions of all types:
 *   Adding support for pre-packaged adapter wrappers (like LangChain or Vercel AI SDK adapters).
@@ -16,8 +16,8 @@ To set up the project locally:
 
 1.  Fork and clone the repository:
     ```bash
-    git clone https://github.com/Ezeko/semanticcache.git
-    cd semanticcache
+    git clone https://github.com/Ezeko/local-semantic-cache.git
+    cd local-semantic-cache
     ```
 2.  Install development dependencies:
     ```bash
@@ -54,7 +54,7 @@ Since this project is written in TypeScript, you need to compile it before runni
 ## Coding Rules & Guidelines
 
 *   **Strict Type-Safety**: Ensure all interfaces, classes, and helper parameters are fully typed. Avoid using `any` type overrides.
-*   **Zero Dependencies**: We aim to keep `semanticcache` light, secure, and fast. Please do not add external dependency modules to `package.json`.
+*   **Zero Dependencies**: We aim to keep `local-semantic-cache` light, secure, and fast. Please do not add external dependency modules to `package.json`.
 *   **Vector Normalization**: If you modify the built-in vectorizer, ensure that output vectors are **L2 unit normalized** (sum of squares = 1.0). This is critical because our similarity search is optimized to run as a fast dot product (which requires unit-length vectors).
 
 Thank you for contributing!
