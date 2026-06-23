@@ -16,8 +16,8 @@ To set up the project locally:
 
 1.  Fork and clone the repository:
     ```bash
-    git clone https://github.com/Ezeko/local-semantic-cache.git
-    cd local-semantic-cache
+    git clone https://github.com/Ezeko/semanticcache.git
+    cd semanticcache
     ```
 2.  Install development dependencies:
     ```bash
