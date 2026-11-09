@@ -1,9 +1,17 @@
 {
   "name": "local-semantic-cache",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Ultra-fast, zero-dependency local semantic cache for LLM/AI prompt responses with built-in TF-IDF vectorizer, vector similarity search, and file persistence.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ezeko/semanticcache.git"
+  },
+  "homepage": "https://github.com/Ezeko/semanticcache#readme",
+  "bugs": {
+    "url": "https://github.com/Ezeko/semanticcache/issues"
+  },
   "files": [
     "dist",
     "Readme.md",
