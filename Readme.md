@@ -47,6 +47,28 @@ bun add local-semantic-cache
 
 ---
 
+## 🚀 1-Line Drop-In OpenAI Wrapper
+
+Wrap the official OpenAI client in one line without rewriting your existing pipelines:
+
+```typescript
+import OpenAI from 'openai';
+import { wrapOpenAI } from 'local-semantic-cache/openai';
+
+// Wrap your existing OpenAI client instance
+const openai = wrapOpenAI(new OpenAI({ apiKey: process.env.OPENAI_API_KEY }));
+
+// Automatically checks semantic cache before hitting the API!
+const completion = await openai.chat.completions.create({
+  model: 'gpt-4o',
+  messages: [{ role: 'user', content: 'What is the capital of France?' }],
+});
+
+console.log(completion.choices[0].message.content);
+```
+
+---
+
 ## Quick Start (Zero-Setup Local Mode)
 
 By default, `local-semantic-cache` uses its built-in string vectorizer. No API keys are required:
